@@ -1,13 +1,9 @@
-'use client'
+'use client';
 
-// import CountChart from "@/components/CountChart";
+import CountChart from "@/components/CountChart";
 import UserCard from "@/components/UserCard";
 import React from "react";
-import dynamic from "next/dynamic";
 
-const CountChart = dynamic(() => import("../../../components/CountChart"), {
-  ssr: false,
-});
 
 const AdminPage = () => {
   return (
