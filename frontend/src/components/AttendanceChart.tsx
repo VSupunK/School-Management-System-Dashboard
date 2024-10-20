@@ -52,10 +52,10 @@ const AttendanceChart = () => {
 
       <ResponsiveContainer width="100%" height="90%">
         <BarChart width={500} height={300} data={data} barSize={20}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
+          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ddd"/>
+          <XAxis dataKey="name" axisLine={false} tick={{fill:"#d1d5db"}} tickLine={false}/>
+          <YAxis axisLine={false} tick={{fill:"#d1d5db"}} tickLine={false}/>
+          <Tooltip contentStyle={{borderRadius:"10px", borderColor:"lightgray"}}/>
           <Legend
             align="left"
             verticalAlign="top"
@@ -64,7 +64,7 @@ const AttendanceChart = () => {
           <Bar
             dataKey="Present"
             fill="#c3ebfa"
-            activeBar={<Rectangle fill="skyblue" stroke="blue" />}
+            activeBar={<Rectangle fill="#c3ebfa" stroke="darkblue" />}
             legendType="circle"
             radius={[10,10,0,0]}
           />
@@ -72,7 +72,7 @@ const AttendanceChart = () => {
           <Bar
             dataKey="Absent"
             fill="#fae27c"
-            activeBar={<Rectangle fill="gold" stroke="red" />}
+            activeBar={<Rectangle fill="#fae27c" stroke="red" />}
             legendType="circle"
             radius={[10,10,0,0]}
           />
