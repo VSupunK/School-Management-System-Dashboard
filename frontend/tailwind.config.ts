@@ -21,6 +21,7 @@ const config: Config = {
         PurpleLightColor: "#f1f0ff",
         YellowColor: "#fae27c",
         YellowLightColor: "#fefceb",
+        lightGray: "#939393",
 
       }
     },
