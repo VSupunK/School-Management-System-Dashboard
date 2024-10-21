@@ -17,3 +17,21 @@
     background-color: #c3ebfa !important;
     color: #000 !important;
 }
+
+.rbc-btn-group:first-child {
+    display: none !important;  
+}
+
+.rbc-toolbar-label{
+    text-align: right !important;
+    padding: 0px 20px !important;
+}
+
+
+.rbc-btn-group:last-child {
+    font-size: 13px !important;  
+}
+
+.rbc-btn-group:last-child button{
+    border: none !important;  
+}
