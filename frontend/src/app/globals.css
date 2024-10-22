@@ -106,3 +106,8 @@
 .rbc-event:nth-child(8) {
     background-color: #fdf2fb !important;
 }
+
+.rbc-event-label{
+    color: gray !important;
+    margin-bottom: 5px !important;
+}
