@@ -17,7 +17,7 @@ const BigCalendar = () => {
 
     console.log(calendarEvents);
   
-  return (<div>
+  return (
     <Calendar
       localizer={localizer}
       events={calendarEvents}
@@ -25,12 +25,12 @@ const BigCalendar = () => {
       endAccessor="end"
       views={['work_week',"day"]}
       view={view}
-      style={{ height: "98%" }}
+      style={{ height: "90%" }}
       onView={handleOnChangeView}
       min={new Date(2024, 9, 21, 8, 0)}
       max={new Date(2024, 9, 21, 17, 0)}
     />
-  </div>)
+  )
 }
 
 export default BigCalendar;
