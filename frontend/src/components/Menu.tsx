@@ -87,7 +87,7 @@ const menuItems = [
       {
         icon: "/announcement.png",
         label: "Announcements",
-        href: "/list/announcements",
+        href: "/dashboard/list/announcements",
         visible: ["admin", "teacher", "student", "parent"],
       },
     ],
