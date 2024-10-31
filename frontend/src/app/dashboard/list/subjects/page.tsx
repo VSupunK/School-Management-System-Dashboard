@@ -28,7 +28,7 @@ const columns = [
   }
 ];
 
-const TeacherListPage = () => {
+const SubjectListPage = () => {
   const renderRow = (item: Subject) => (
     <tr
       key={item.id}
@@ -83,4 +83,4 @@ const TeacherListPage = () => {
   );
 };
 
-export default TeacherListPage;
+export default SubjectListPage;
