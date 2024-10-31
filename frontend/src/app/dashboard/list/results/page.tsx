@@ -1,7 +1,7 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { role, examsData } from "@/lib/data";
+import { role, resultsData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -23,8 +23,7 @@ const columns = [
     accessor: "info",
   },{
     header: "Student",
-    accessor: "student",
-    className: "hidden md:table-cell",
+    accessor: "student"
   },
   {
     header: "Score",
@@ -59,7 +58,7 @@ const ResultListPage = () => {
       className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-PurpleLightColor"
     >
       <td className="flex items-center gap-4 p-4">{item.subject}</td>
-      <td className="hidden md:table-cell">{item.teacher}</td>
+      <td>{item.student}</td>
       <td className="hidden md:table-cell">{item.score}</td>
       <td className="hidden md:table-cell">{item.teacher}</td>
       <td className="hidden md:table-cell">{item.class}</td>
@@ -102,7 +101,7 @@ const ResultListPage = () => {
         </div>
       </div>
       {/* List */}
-      <Table columns={columns} renderRow={renderRow} data={examsData} />
+      <Table columns={columns} renderRow={renderRow} data={resultsData} />
       {/* Pagination */}
       <Pagination />
     </div>
