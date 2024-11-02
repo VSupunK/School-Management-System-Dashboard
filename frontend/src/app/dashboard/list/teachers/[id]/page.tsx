@@ -1,3 +1,4 @@
+import Announcement from "@/components/Announcements";
 import BigCalendar from "@/components/BigCalendar";
 import Image from "next/image";
 import Link from "next/link";
@@ -120,7 +121,7 @@ const SigleTeacherPage = () => {
         </div>
       </div>
 
-      <div className="w-full xl:w-1/3">
+      
         {/* Right */}
         <div className="w-full xl:w-1/3">
           <div className="bg-white p-4 rounded-md">
@@ -129,23 +130,23 @@ const SigleTeacherPage = () => {
               <Link className="p-3 rounded-md bg-skyLightColor" href="/">
                 Teacher&apos;s Classes
               </Link>
-              <Link className="p-3 rounded-md bg-skyLightColor" href="/">
-                Teacher&apos;s Classes
+              <Link className="p-3 rounded-md bg-PurpleColor" href="/">
+                Teacher&apos;s Students
               </Link>
-              <Link className="p-3 rounded-md bg-skyLightColor" href="/">
-                Teacher&apos;s Classes
+              <Link className="p-3 rounded-md bg-YellowLightColor" href="/">
+                Teacher&apos;s Lessons
               </Link>
-              <Link className="p-3 rounded-md bg-skyLightColor" href="/">
-                Teacher&apos;s Classes
+              <Link className="p-3 rounded-md bg-pink-50" href="/">
+                Teacher&apos;s Exams
               </Link>
-              <Link className="p-3 rounded-md bg-skyLightColor" href="/">
-                Teacher&apos;s Classes
+              <Link className="p-3 rounded-md bg-skyColor" href="/">
+                Teacher&apos;s Assignmnets
               </Link>
             </div>
           </div>
+          <Announcement />
         </div>
       </div>
-    </div>
   );
 };
 
