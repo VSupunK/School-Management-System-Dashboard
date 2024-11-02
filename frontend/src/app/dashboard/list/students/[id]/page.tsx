@@ -117,7 +117,7 @@ const SigleStudentPage = () => {
 
         {/* Bottom */}
         <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
-          <h1>Teacher&apos;s Schedule</h1>
+          <h1>Student&apos;s Schedule</h1>
           <BigCalendar />
         </div>
       </div>
@@ -129,19 +129,19 @@ const SigleStudentPage = () => {
             <h1 className="text-xl font-semibold">Shortcuts</h1>
             <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
               <Link className="p-3 rounded-md bg-skyLightColor" href="/">
-                Teacher&apos;s Classes
+                Student&apos;s Lessons
               </Link>
               <Link className="p-3 rounded-md bg-PurpleColor" href="/">
-                Teacher&apos;s Students
-              </Link>
-              <Link className="p-3 rounded-md bg-YellowLightColor" href="/">
-                Teacher&apos;s Lessons
+                Student&apos;s Teachers
               </Link>
               <Link className="p-3 rounded-md bg-pink-50" href="/">
-                Teacher&apos;s Exams
+                Student&apos;s Exams
               </Link>
               <Link className="p-3 rounded-md bg-skyColor" href="/">
-                Teacher&apos;s Assignmnets
+                Student&apos;s Assignmnets
+              </Link>
+              <Link className="p-3 rounded-md bg-YellowLightColor" href="/">
+                Student&apos;s Results
               </Link>
             </div>
           </div>
