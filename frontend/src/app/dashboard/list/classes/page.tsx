@@ -1,3 +1,4 @@
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -9,9 +10,9 @@ import React from "react";
 type Class = {
   id: number;
   name: string;
-  capacity: string,
-  grade: string,
-  supervisor: string,
+  capacity: string;
+  grade: string;
+  supervisor: string;
 };
 
 const columns = [
@@ -21,8 +22,8 @@ const columns = [
   },
   {
     header: "Capacity",
-    accessor: 'capacity',
-    className: 'hidden md:table-cell'
+    accessor: "capacity",
+    className: "hidden md:table-cell",
   },
   {
     header: "Grade",
@@ -36,8 +37,8 @@ const columns = [
   },
   {
     header: "Actions",
-    accessor: "action"
-  }
+    accessor: "action",
+  },
 ];
 
 const ClassListPage = () => {
@@ -46,14 +47,13 @@ const ClassListPage = () => {
       key={item.id}
       className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-PurpleLightColor"
     >
-      <td className="flex items-center gap-4 p-4">
-      {item.name}</td>
+      <td className="flex items-center gap-4 p-4">{item.name}</td>
       <td className="hidden md:table-cell">{item.capacity}</td>
       <td className="hidden md:table-cell">{item.grade}</td>
       <td className="hidden md:table-cell">{item.supervisor}</td>
-      
+
       <td>
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           <Link href={`/list/teachers/${item.id}`}>
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-skyColor">
               <Image src="/edit.png" alt="" width={16} height={16} />
@@ -63,6 +63,15 @@ const ClassListPage = () => {
             <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PurpleColor">
               <Image src="/delete.png" alt="" width={16} height={16} />
             </button>
+          )}
+        </div> */}
+
+        <div className="flex items-center gap-2">
+          {role === "admin" && (
+            <>
+              <FormModal table="class" type="update" data={item} />
+              <FormModal table="class" type="delete" id={item.id} />
+            </>
           )}
         </div>
       </td>
@@ -83,9 +92,12 @@ const ClassListPage = () => {
             <button className="w-8 h-8 flex justify-center items-center rounded-full bg-YellowColor">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            {role === 'admin' && (<button className="w-8 h-8 flex justify-center items-center rounded-full bg-YellowColor">
-              <Image src="/plus.png" alt="" width={14} height={14} />
-            </button>)}
+            {/* {role === "admin" && (
+              <button className="w-8 h-8 flex justify-center items-center rounded-full bg-YellowColor">
+                <Image src="/plus.png" alt="" width={14} height={14} />
+              </button>
+            )} */}
+            {role === "admin" && <FormModal table="class" type="create" />}
           </div>
         </div>
       </div>

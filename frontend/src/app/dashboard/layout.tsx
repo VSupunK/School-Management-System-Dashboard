@@ -1,3 +1,5 @@
+"use client"
+
 import Menu from "@/components/Menu";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
