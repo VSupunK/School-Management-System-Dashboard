@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { Calendar, momentLocalizer, View, Views } from 'react-big-calendar'
 import moment from 'moment'

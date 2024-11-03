@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { time } from "console";
 import Image from "next/image";
