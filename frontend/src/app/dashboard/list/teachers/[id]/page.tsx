@@ -1,5 +1,6 @@
 import Announcement from "@/components/Announcements";
 import BigCalendar from "@/components/BigCalendar";
+import FormModal from "@/components/FormModal";
 import Performance from "@/components/Performance";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,6 +27,21 @@ const SigleTeacherPage = () => {
             <div className="w-2/3 flex flex-col justify-between gap-4">
               <div className="flex items-center gap-4">
                 <h1 className="text-lg font-semibold">John Smith</h1>
+                <FormModal table="teacher" type="update" data={{
+                  id: 1,
+                  username: "John Smith",
+                  email: "john1smith@gmail.com",
+                  password: "password",
+                  firstName: "John",
+                  lastName: "Smitth",
+                  phone: "+90 77651203",
+                  address: "121, Streer",
+                  bloodType: "A+",
+                  dateOfBirth: "2000-12-13",
+                  sex: "male",
+                  img: "teacher1.webp",
+
+                }}/>
               </div>
               <p className="text-sm text-gray-500">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
