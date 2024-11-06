@@ -2,7 +2,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import InputField from "./InputField";
+import InputField from "../InputField";
 import Image from "next/image";
 
 const schema = z.object({
