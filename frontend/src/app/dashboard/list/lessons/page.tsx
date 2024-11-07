@@ -20,6 +20,11 @@ const columns = [
     accessor: "info",
   },
   {
+    header: "Class",
+    accessor: "class",
+    className: "hidden md:table-cell",
+  },
+  {
     header: "Teachers",
     accessor: "teachers",
     className: "hidden md:table-cell",

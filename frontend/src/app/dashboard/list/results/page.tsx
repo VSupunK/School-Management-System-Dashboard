@@ -78,14 +78,14 @@ const ResultListPage = () => {
             </button>
           )}
         </div> */}
-
-        {role === "admin" ||
-          (role === "teacher" && (
+        <div className="flex items-center gap-2">
+          {role === "admin" || role === "teacher" && (
             <>
               <FormModal table="result" type="update" data={item} />
               <FormModal table="result" type="delete" id={item.id} />
             </>
-          ))}
+          )}
+        </div>
       </td>
     </tr>
   );
