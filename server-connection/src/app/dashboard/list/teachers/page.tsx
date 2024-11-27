@@ -65,8 +65,12 @@ const renderRow = (item: TeacherList) => (
       </div>
     </td>
     <td className="hidden md:table-cell">{item.username}</td>
-    <td className="hidden md:table-cell">{item.subjects.join(",")}</td>
-    <td className="hidden md:table-cell">{item.classes.join(",")}</td>
+    <td className="hidden md:table-cell">
+      {item.subjects.map((subject) => subject.name).join(", ")}
+    </td>
+    <td className="hidden md:table-cell">
+      {item.classes.map((classItem) => classItem.name).join(", ")}
+    </td>
     <td className="hidden lg:table-cell">{item.phone}</td>
     <td className="hidden lg:table-cell">{item.address}</td>
     <td>
@@ -76,11 +80,6 @@ const renderRow = (item: TeacherList) => (
             <Image src="/view1.png" alt="" width={16} height={16} />
           </button>
         </Link>
-        {/* {role === "admin" && (
-          <button className="w-7 h-7 flex items-center justify-center rounded-full bg-PurpleColor">
-            <Image src="/delete.png" alt="" width={16} height={16} />
-          </button>
-        )} */}
         {role === "admin" && (
           <FormModal table="student" type="delete" id={Number(item.id)} />
         )}
@@ -90,9 +89,14 @@ const renderRow = (item: TeacherList) => (
 );
 
 const TeacherListPage = async () => {
-  const teachers = await prisma.teacher.findMany();
+  const data = await prisma.teacher.findMany({
+    include: {
+      subjects: true,
+      classes: true,
+    },
+  });
 
-  console.log(teachers);
+  console.log(data);
   return (
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
       {/* Top */}
@@ -117,7 +121,7 @@ const TeacherListPage = async () => {
         </div>
       </div>
       {/* List */}
-      <Table columns={columns} renderRow={renderRow} data={teachersData} />
+      <Table columns={columns} renderRow={renderRow} data={data} />
       {/* Pagination */}
       <Pagination />
     </div>
