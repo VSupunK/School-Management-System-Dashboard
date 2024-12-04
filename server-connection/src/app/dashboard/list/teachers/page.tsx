@@ -99,6 +99,9 @@ const TeacherListPage = async ({
   const p = page ? parseInt(page) : 1;
   const [data, count] = await prisma.$transaction([
     prisma.teacher.findMany({
+      where: {
+        id: "teacher12",
+      },
       include: {
         subjects: true,
         classes: true,
