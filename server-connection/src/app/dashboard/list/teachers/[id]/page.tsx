@@ -27,21 +27,24 @@ const SigleTeacherPage = () => {
             <div className="w-2/3 flex flex-col justify-between gap-4">
               <div className="flex items-center gap-4">
                 <h1 className="text-lg font-semibold">John Smith</h1>
-                <FormModal table="teacher" type="update" data={{
-                  id: 1,
-                  username: "John Smith",
-                  email: "john1smith@gmail.com",
-                  password: "password",
-                  firstName: "John",
-                  lastName: "Smitth",
-                  phone: "+90 77651203",
-                  address: "121, Streer",
-                  bloodType: "A+",
-                  dateOfBirth: "2000-12-13",
-                  sex: "male",
-                  img: "teacher1.webp",
-
-                }}/>
+                <FormModal
+                  table="teacher"
+                  type="update"
+                  data={{
+                    id: 1,
+                    username: "John Smith",
+                    email: "john1smith@gmail.com",
+                    password: "password",
+                    firstName: "John",
+                    lastName: "Smitth",
+                    phone: "+90 77651203",
+                    address: "121, Streer",
+                    bloodType: "A+",
+                    dateOfBirth: "2000-12-13",
+                    sex: "male",
+                    img: "teacher1.webp",
+                  }}
+                />
               </div>
               <p className="text-sm text-gray-500">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -138,33 +141,35 @@ const SigleTeacherPage = () => {
         </div>
       </div>
 
-      
-        {/* Right */}
-        <div className="w-full xl:w-1/3 flex flex-col gap-4">
-          <div className="bg-white p-4 rounded-md">
-            <h1 className="text-xl font-semibold">Shortcuts</h1>
-            <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
-              <Link className="p-3 rounded-md bg-skyLightColor" href="/">
-                Teacher&apos;s Classes
-              </Link>
-              <Link className="p-3 rounded-md bg-PurpleColor" href="/">
-                Teacher&apos;s Students
-              </Link>
-              <Link className="p-3 rounded-md bg-YellowLightColor" href="/">
-                Teacher&apos;s Lessons
-              </Link>
-              <Link className="p-3 rounded-md bg-pink-50" href="/">
-                Teacher&apos;s Exams
-              </Link>
-              <Link className="p-3 rounded-md bg-skyColor" href="/">
-                Teacher&apos;s Assignmnets
-              </Link>
-            </div>
+      {/* Right */}
+      <div className="w-full xl:w-1/3 flex flex-col gap-4">
+        <div className="bg-white p-4 rounded-md">
+          <h1 className="text-xl font-semibold">Shortcuts</h1>
+          <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
+            <Link className="p-3 rounded-md bg-skyLightColor" href="/">
+              Teacher&apos;s Classes
+            </Link>
+            <Link
+              className="p-3 rounded-md bg-PurpleColor"
+              href={`/dashboard/list/students?teacherId=${"teacher1"}`}
+            >
+              Teacher&apos;s Students
+            </Link>
+            <Link className="p-3 rounded-md bg-YellowLightColor" href="/">
+              Teacher&apos;s Lessons
+            </Link>
+            <Link className="p-3 rounded-md bg-pink-50" href="/">
+              Teacher&apos;s Exams
+            </Link>
+            <Link className="p-3 rounded-md bg-skyColor" href="/">
+              Teacher&apos;s Assignmnets
+            </Link>
           </div>
-          <Performance />
-          <Announcement />
         </div>
+        <Performance />
+        <Announcement />
       </div>
+    </div>
   );
 };
 
