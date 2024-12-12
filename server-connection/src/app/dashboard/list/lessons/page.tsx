@@ -90,6 +90,9 @@ const LessonListPage = async ({
     for (const [key, value] of Object.entries(queryParams)) {
       if (value !== undefined) {
         switch (key) {
+          case "classId":
+            query.classId = parseInt(value);
+            break;
           case "teacherId":
             query.teacherId = value;
             break;
