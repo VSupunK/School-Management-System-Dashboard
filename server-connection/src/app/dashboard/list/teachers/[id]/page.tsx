@@ -148,7 +148,7 @@ const SigleTeacherPage = () => {
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
             <Link
               className="p-3 rounded-md bg-skyLightColor"
-              href={`/list/classes?supervisorId=${"teacher2"}`}
+              href={`/dashboard/list/classes?supervisorId=${"teacher2"}`}
             >
               Teacher&apos;s Classes
             </Link>
