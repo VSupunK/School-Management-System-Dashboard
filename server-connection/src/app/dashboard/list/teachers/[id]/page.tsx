@@ -164,10 +164,16 @@ const SigleTeacherPage = () => {
             >
               Teacher&apos;s Lessons
             </Link>
-            <Link className="p-3 rounded-md bg-pink-50" href="/">
+            <Link
+              className="p-3 rounded-md bg-pink-50"
+              href={`/dashboard/list/exams?teacherId=${"teacher2"}`}
+            >
               Teacher&apos;s Exams
             </Link>
-            <Link className="p-3 rounded-md bg-skyColor" href="/">
+            <Link
+              className="p-3 rounded-md bg-skyColor"
+              href={`/dashboard/list/assignments?teacherId=${"teacher2"}`}
+            >
               Teacher&apos;s Assignmnets
             </Link>
           </div>
