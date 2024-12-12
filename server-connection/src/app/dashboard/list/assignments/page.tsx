@@ -50,7 +50,9 @@ const renderRow = (item: AssignmentList) => (
   >
     <td className="flex items-center gap-4 p-4">{item.lesson.subject.name}</td>
     <td>{item.lesson.class.name}</td>
-    <td className="hidden md:table-cell">{item.lesson.teacher.name}</td>
+    <td className="hidden md:table-cell">
+      {item.lesson.teacher.name + " " + item.lesson.teacher.surname}
+    </td>
     <td className="hidden md:table-cell">
       {new Intl.DateTimeFormat("en-US").format(item.dueDate)}
     </td>
@@ -89,7 +91,7 @@ const AssignmentListPage = async ({
 
   // URL PARAMS CONDITION
 
-  const query: Prisma.ExamWhereInput = {};
+  const query: Prisma.AssignmentWhereInput = {};
 
   if (queryParams) {
     for (const [key, value] of Object.entries(queryParams)) {

@@ -147,7 +147,7 @@ const SigleStudentPage = () => {
             </Link>
             <Link
               className="p-3 rounded-md bg-skyColor"
-              href={`/dashboard/list/assignmnets?classId=${2}`}
+              href={`/dashboard/list/assignments?classId=${2}`}
             >
               Student&apos;s Assignmnets
             </Link>
