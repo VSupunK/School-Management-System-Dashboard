@@ -101,6 +101,9 @@ const LessonListPage = async ({
               { subject: { name: { contains: value, mode: "insensitive" } } },
               { teacher: { name: { contains: value, mode: "insensitive" } } },
             ];
+            break;
+          default:
+            break;
         }
       }
     }
