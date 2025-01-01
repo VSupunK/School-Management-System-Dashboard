@@ -5,17 +5,12 @@ import TableSearch from "@/components/TableSearch";
 import { announcementsData, role } from "@/lib/data";
 import prisma from "@/lib/prisma";
 import { ITEM_PER_PAGE } from "@/lib/settings";
-import { Prisma } from "@prisma/client";
+import { Announcement, Class, Prisma } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-type Announcement = {
-  id: number;
-  title: string;
-  class: string;
-  date: string;
-};
+type AnnouncementList = Announcement & { class: Class };
 
 const columns = [
   {
@@ -37,14 +32,16 @@ const columns = [
   },
 ];
 
-const renderRow = (item: Announcement) => (
+const renderRow = (item: AnnouncementList) => (
   <tr
     key={item.id}
     className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-PurpleLightColor"
   >
     <td className="flex items-center gap-4 p-4">{item.title}</td>
-    <td>{item.class}</td>
-    <td className="hidden md:table-cell">{item.date}</td>
+    <td>{item.class.name}</td>
+    <td className="hidden md:table-cell">
+      {new Intl.DateTimeFormat("en-US").format(item.date)}
+    </td>
     <td>
       {/* <div className="flex items-center gap-2">
         <Link href={`/list/teachers/${item.id}`}>
@@ -97,7 +94,7 @@ const AnnouncementListPage = async ({
   }
 
   const [data, count] = await prisma.$transaction([
-    prisma.event.findMany({
+    prisma.announcement.findMany({
       where: query,
       include: {
         class: true,
@@ -105,7 +102,7 @@ const AnnouncementListPage = async ({
       take: ITEM_PER_PAGE,
       skip: ITEM_PER_PAGE * (p - 1),
     }),
-    prisma.event.count({
+    prisma.announcement.count({
       where: query,
     }),
   ]);
@@ -136,7 +133,7 @@ const AnnouncementListPage = async ({
         </div>
       </div>
       {/* List */}
-      <Table columns={columns} renderRow={renderRow} data={announcementsData} />
+      <Table columns={columns} renderRow={renderRow} data={data} />
       {/* Pagination */}
       <Pagination page={p} count={count} />
     </div>
