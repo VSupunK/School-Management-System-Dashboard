@@ -5,15 +5,15 @@ import TableSearch from "@/components/TableSearch";
 import { lessonsData, role } from "@/lib/data";
 import prisma from "@/lib/prisma";
 import { ITEM_PER_PAGE } from "@/lib/settings";
-import { Lesson, Prisma } from "@prisma/client";
+import { Class, Lesson, Prisma, Subject, Teacher } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 type LessonList = Lesson & {
-  subject: { name: string };
-  class: { name: string };
-  teacher: { name: string; surname: string };
+  subject: Subject;
+  class: Class;
+  teacher: Teacher;
 };
 
 const columns = [
@@ -101,6 +101,9 @@ const LessonListPage = async ({
               { subject: { name: { contains: value, mode: "insensitive" } } },
               { teacher: { name: { contains: value, mode: "insensitive" } } },
             ];
+            break;
+          default:
+            break;
         }
       }
     }

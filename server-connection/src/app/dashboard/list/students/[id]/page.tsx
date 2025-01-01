@@ -139,13 +139,22 @@ const SigleStudentPage = () => {
             >
               Student&apos;s Teachers
             </Link>
-            <Link className="p-3 rounded-md bg-pink-50" href="/">
+            <Link
+              className="p-3 rounded-md bg-pink-50"
+              href={`/dashboard/list/exams?classId=${2}`}
+            >
               Student&apos;s Exams
             </Link>
-            <Link className="p-3 rounded-md bg-skyColor" href="/">
+            <Link
+              className="p-3 rounded-md bg-skyColor"
+              href={`/dashboard/list/assignments?classId=${2}`}
+            >
               Student&apos;s Assignmnets
             </Link>
-            <Link className="p-3 rounded-md bg-YellowLightColor" href="/">
+            <Link
+              className="p-3 rounded-md bg-YellowLightColor"
+              href={`/dashboard/list/results?studentId=${"student2"}`}
+            >
               Student&apos;s Results
             </Link>
           </div>
